@@ -90,7 +90,7 @@ export const logoutUser = async(req:Request,res:Response)=>{
     }
   })
   
-      return res.json(500).json({message:'Logout successful'})
+      return res.status(200).json({message:'Logout successful'})
 }
 
 //controllers for user verify
