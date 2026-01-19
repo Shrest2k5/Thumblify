@@ -9,6 +9,7 @@ import MyGeneration from "./pages/MyGeneration";
 import YtPreview from "./pages/YtPreview";
 import Login from "./components/Login";
 import { useEffect } from "react";
+import {Toaster} from 'react-hot-toast'
 
 export default function App() {
 
@@ -17,7 +18,8 @@ export default function App() {
         window.scrollTo(0,0)
     },[pathname])
     return (
-        <>
+        <>   
+            <Toaster/>
             <LenisScroll />
             <Navbar />
             <Routes>
