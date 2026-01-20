@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import React from "react"
 import SoftBackdrop from "./SoftBackdrop"
 import { useAuth } from "../context/AuthContext"
@@ -24,10 +24,17 @@ const Login = () => {
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (state === 'login') {
-            login()
+            login(formData)
+        }else{
+            signUp(formData)
         }
-
     }
+
+    useEffect(()=>{
+        if (user) {
+            navigate('/')
+        }
+    },[user])
   return (
     <>
 

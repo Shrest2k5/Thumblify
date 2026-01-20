@@ -52,11 +52,11 @@ export default function Navbar() {
                 </button>
                         )}
 
-                </div>
-                
-                <button onClick={() => setIsOpen(true)} className="md:hidden">
+                    <button onClick={() => setIsOpen(true)} className="md:hidden">
                     <MenuIcon size={26} className="active:scale-90 transition" />
                 </button>
+                </div>
+
             </motion.nav>
 
             <div className={`fixed inset-0 z-100 bg-black/40 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-400 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
@@ -67,7 +67,7 @@ export default function Navbar() {
                 
                 <Link onClick={() => setIsOpen(false)}  to={'#'}>Contact Us</Link>
                 {isLoggedIn ? 
-                 <button onClick={()=>{setIsOpen(false); logout()}}>Logout</button>: <Link onClick={() => setIsOpen(false)}  to={'/login'}>Login</Link>}
+                 <button onClick={()=>{setIsOpen(false); logout()}}>Logout</button>: <Link onClick={() => setIsOpen(false)}  to={'/login'}>Login</Link> }
                 
 
                 <button onClick={() => setIsOpen(false)} className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-pink-600 hover:bg-pink-700 transition text-white rounded-md flex">
